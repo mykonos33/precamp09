@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>인증번호 전송</title>
+    <script>
+        // function sending() {
+        //     const token = String(Math.floor(Math.random() * 1000000)).padStart(6, '0')
+        //     document.getElementById("number1").innerText = token
+        // }
+            const token=()=>{ 
+                document.getElementById("number1").innerText = String(Math.floor(Math.random() * 1000000)).padStart(6, '0')
+            }
+        
+    </script>
+</head>
+<body>
+    <span id="number1">000000</span>
+    <button onclick="token()">인증번호 전송</button>
+</body>
+</html>

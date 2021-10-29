@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>이벤트감지</title>
+    <script>
+        const qqq=()=>{
+            if((document.getElementById("email").value !== "") 
+                && (document.getElementById("password1").value !== "") 
+                && (document.getElementById("password2").value !== "")) {
+                // const color = "background-color:yellow"
+                document.getElementById("myButton").setAttribute('style', 'background-color:yellow;')
+                document.getElementById("myButton").removeAttribute("disabled")
+           } else {
+                // const color = "background-color:none"
+                document.getElementById("myButton").setAttribute('style', 'background-color:none;')
+                document.getElementById("myButton").setAttribute('disabled', true)
+           }
+        }
+    </script>
+</head>
+<body>
+    <input id="email" type="text" placeholder="이메일을 입력해 주세요." oninput="qqq()" /><br />
+    <input id="password1" type="password" placeholder="비밀번호를 입력해 주세요." oninput="qqq()" /><br />
+    <input id="password2" type="password" placeholder="비밀번호를 다시 입력해 주세요." oninput="qqq()" /><br />
+    <button id="myButton">회원가입</button>
+</body>
+</html>

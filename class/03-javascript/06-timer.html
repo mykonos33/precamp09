@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>타이머</title>
+    <script>
+        let isActive = false
+        function send() {
+            if (isActive === false) {  // 아래 3째 줄에 넣을 수도 있음
+                document.getElementById("defa").innerText = String(Math.floor(Math.random() * 1000000)).padStart(6, "0")
+                let time = 180
+            // if (isActive === false) { <- 이걸 위에 안 쓰고 여기 쓸 수도 있음. 그러면 인증번호생성만 반복되고 카운트다운은 x
+                setInterval(function() {
+                const minutes = Math.floor(time / 60)
+                const seconds = time % 60
+                    if (time >= 0) {
+                        document.getElementById("sec").innerText =  String(minutes).padStart(2, "0") + ":" + String(seconds).padStart(2, "0")
+                        time = time -1
+                    }
+            }, 1000)
+            }   
+            isActive = true
+        }
+    </script>
+</head>
+<br>
+<body>
+    <span id="defa">000000</span>
+    <button onclick="send()">인증번호 전송</button>
+
+    <br />
+    <span id="sec">3:00</span>
+</body>
+</html>
